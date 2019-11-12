@@ -38,7 +38,7 @@ tmp
 .tmp
 node_modules
 src/bower_components
-dist
+#dist
 
 # Others
 npm-debug.log
