@@ -1,0 +1,17 @@
+{
+  "generator-chisel": {
+    "config": {
+      "name": "Soldat Page",
+      "author": "kentee",
+      "projectType": "fe",
+      "nameSlug": "soldat-page",
+      "nameCamel": "SoldatPage",
+      "chiselVersion": "0.16.0",
+      "has_jquery": true,
+      "has_jquery_vendor_config": true
+    },
+    "pages": [
+      "Home"
+    ]
+  }
+}

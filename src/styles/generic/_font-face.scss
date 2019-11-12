@@ -1,0 +1,23 @@
+/* ==========================================================================
+   #FONT-FACE
+   ========================================================================== */
+
+/**
+ * Add font-display: swap to font-face blocks here
+ * https://www.zachleat.com/web/comprehensive-webfonts/#font-display
+ */
+
+@font-face {
+  font-family: AlegreyaSans;
+  src: url('../assets/fonts/Alegreya_Sans/AlegreyaSans-Bold.ttf');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../assets/fonts/Rubik/Rubik-Bold.ttf');
+}

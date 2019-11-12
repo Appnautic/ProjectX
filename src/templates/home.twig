@@ -1,0 +1,55 @@
+{% extends "layouts/base.twig" %}
+{% set pageName = 'Home' %}
+
+
+{% block content %}
+
+    <section class="c-home-hero">
+
+        <div class="c-home-hero__content">
+
+            <h1 class="c-home-hero__heading">Join the game and kill anything that moves!</h1>
+            <p class="c-home-hero__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit? Fusce rhoncus augue
+                ante, at gravida neque consectetur eget? Pellentesque eget velit bibendum, semper nisi et, molestie
+                risus!</p>
+
+            <div class="c-home-hero__buttons">
+                <a href="#" class="c-home-hero__steam-button">Download on <span>Steam</span></a>
+                <a href="#" class="c-home-hero__download-button">
+                    <div class="o-icon o-icon--icon-download c-home-hero__download-icon">
+                        <svg class="o-icon__symbol">
+                            <use xlink:href="assets/images/icons.svg#download"/>
+                        </svg>
+                    </div>
+                    <span>Download Soldat</span> <span><strong>v1.8</strong> for Windows</span></a>
+            </div>
+        </div>
+
+        <video class="c-home-hero__video" autoplay muted loop>
+            <source src="assets/video/SOLDAT_Official_Trailer.mp4" type="video/mp4">
+        </video>
+        <div class="c-home-hero__bg">
+            <div class="c-home-hero__bg-sec"></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>About the game</h2>
+        <h2>Game specifications</h2>
+    </section>
+
+    <section>
+        <h2>Trailer</h2>
+    </section>
+
+    <section>
+        <h2>Screenshots</h2>
+    </section>
+
+    <section>
+        <h2>Updates</h2>
+    </section>
+
+{% endblock %}
+
+

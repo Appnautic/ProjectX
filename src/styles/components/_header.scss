@@ -1,0 +1,169 @@
+/* ==========================================================================
+   #HEADER
+   ========================================================================== */
+
+.c-header {
+
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  position: fixed;
+  padding: 0 60px;
+  z-index: 999;
+
+  transition: all 0.4s ease-in-out;
+  border-bottom: 0 solid $color-dark-grey;
+
+  /* THD logo */
+  &:before {
+    content: '';
+    display: inline-block;
+    opacity: 0;
+    float: left;
+    width: 99px;
+    margin: 20px 9px 0 0;
+    padding-right: 9px;
+    height: 32px;
+    background: url('../assets/images/thd_logo.png') left center no-repeat;
+    background-size: contain;
+    background-origin: content-box;
+    margin-right: -99px;
+  }
+
+  &.is-active {
+
+    background: $header-bg-color;
+    border-bottom: 1px solid $color-dark-grey;
+    height: 70px;
+    line-height: 69px;
+
+    /* THD logo */
+    &:before {
+      animation: header-thd 0.3s linear 0.7s 1 normal forwards;
+    }
+
+    .c-header__logo {
+
+      margin: 0;
+      width: 130px;
+      padding-left: 9px;
+      animation: header-logo-bg 0.1s linear 0.4s 1 normal forwards;
+
+      /* animated line */
+      &:before {
+        animation: header-line 0.3s linear 0.4s 1 normal forwards;
+      }
+    }
+
+    .c-header__logo-inner {
+
+      filter: brightness(0) invert(1);
+    }
+
+    .c-header__logo-inner:hover {
+
+      filter: none;
+    }
+
+    .c-header__navigation a {
+      color: #fff;
+    }
+
+    .c-header__navigation a:hover {
+      color: $color-red;
+    }
+  }
+}
+
+.c-header__logo {
+
+  display: inline-block;
+  float: left;
+  margin-top: 30px;
+  width: 280px;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+
+  /* animated line */
+  &:before {
+
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    float: left;
+    border-left: 1px solid #fff;
+    height: 0;
+  }
+}
+
+.c-header__logo-inner {
+  transition: all 0.4s ease-in-out;
+}
+
+.c-header__navigation {
+
+  float: right;
+}
+
+.c-header__list {
+  list-style: none;
+  display: flex;
+}
+
+.c-header__list-el {
+  &:not(:first-child) {
+    margin-left: 20px;
+  }
+}
+
+.c-header__link {
+
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #989898;
+  font-weight: bold;
+  font-family: AlegreyaSans;
+  font-size: 18px;
+
+  &:hover {
+
+    color: #d13245;
+  }
+}
+
+
+@keyframes header-line {
+  0% {
+    top: 35px;
+    height: 0;
+  }
+
+  100% {
+    top: 20px;
+    height: 32px;
+  }
+}
+
+@keyframes header-logo-bg {
+  0% {
+    background: transparent;
+  }
+
+  100% {
+    background: $header-bg-color;
+  }
+}
+
+@keyframes header-thd {
+  0% {
+    margin-right: -99px;
+    opacity: 1;
+  }
+
+  100% {
+    margin-right: 0;
+    opacity: 1;
+  }
+}
