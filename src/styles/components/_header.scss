@@ -11,7 +11,7 @@
   padding: 0 60px;
   z-index: 999;
 
-  transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out, line-height 1ms;
   border-bottom: 0 solid $color-dark-grey;
 
   /* THD logo */
@@ -47,7 +47,7 @@
       margin: 0;
       width: 130px;
       padding-left: 9px;
-      animation: header-logo-bg 0.1s linear 0.4s 1 normal forwards;
+      animation: header-logo-bg 0.1s linear 0.7s 1 normal forwards;
 
       /* animated line */
       &:before {
@@ -104,6 +104,7 @@
 
 .c-header__navigation {
 
+  transition: line-height 0.4s ease-in-out;
   float: right;
 }
 
@@ -132,7 +133,6 @@
     color: #d13245;
   }
 }
-
 
 @keyframes header-line {
   0% {
