@@ -1,0 +1,20 @@
+{
+    "name": "Soldat.pl",
+    "short_name": "Soldat.pl",
+    "icons": [
+        {
+            "src": "/assets/images/favicons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/favicons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#191d1c",
+    "background_color": "#191d1c",
+    "start_url": "http://soldat.pl",
+    "display": "standalone"
+}
