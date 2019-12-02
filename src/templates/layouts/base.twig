@@ -2,9 +2,27 @@
 <html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
 <head>
     <meta charset="utf-8"/>
-    <title>{{ pageName }} - Soldat Page</title>
-    <link rel="stylesheet" property="stylesheet" href="{{ revisionedPath('styles/main.css') }}" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="/assets/fonts/Trueno/TruenoSemiBold.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="/assets/fonts/Trueno/TruenoExtraBold.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="/assets/fonts/Roboto/Roboto-Regular.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="/assets/images/icons.svg" as="image" type="image/svg+xml">
+
+    <link rel="stylesheet" property="stylesheet" href="{{ revisionedPath('styles/main.css') }}" type="text/css">
+    <title>{{ pageName }} - Soldat Page</title>
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#191d1c">
+    <link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#b91d47">
+    <meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#191d1c">
+
     <script>document.documentElement.classList.remove('no-js');</script>
     {% if hasVendor() %}
         <script src="{{ revisionedPath('scripts/vendor.js') }}" defer></script>

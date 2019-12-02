@@ -2,87 +2,17 @@
    #HEADER
    ========================================================================== */
 
-.c-header {
-
-  width: 100%;
-  height: 100px;
-  line-height: 100px;
-  position: fixed;
-  padding: 0 60px;
-  z-index: 999;
-
-  transition: all 0.4s ease-in-out, line-height 1ms;
-  border-bottom: 0 solid $color-dark-grey;
-
-  /* THD logo */
-  &:before {
-    content: '';
-    display: inline-block;
-    opacity: 0;
-    float: left;
-    width: 99px;
-    margin: 20px 9px 0 0;
-    padding-right: 9px;
-    height: 32px;
-    background: url('../assets/images/thd_logo.png') left center no-repeat;
-    background-size: contain;
-    background-origin: content-box;
-    margin-right: -99px;
-  }
-
-  &.is-active {
-
-    background: $header-bg-color;
-    border-bottom: 1px solid $color-dark-grey;
-    height: 70px;
-    line-height: 69px;
-
-    /* THD logo */
-    &:before {
-      animation: header-thd 0.3s linear 0.7s 1 normal forwards;
-    }
-
-    .c-header__logo {
-
-      margin: 0;
-      width: 130px;
-      padding-left: 9px;
-      animation: header-logo-bg 0.1s linear 0.7s 1 normal forwards;
-
-      /* animated line */
-      &:before {
-        animation: header-line 0.3s linear 0.4s 1 normal forwards;
-      }
-    }
-
-    .c-header__logo-inner {
-
-      filter: brightness(0) invert(1);
-    }
-
-    .c-header__logo-inner:hover {
-
-      filter: none;
-    }
-
-    .c-header__navigation a {
-      color: #fff;
-    }
-
-    .c-header__navigation a:hover {
-      color: $color-red;
-    }
-  }
-}
+/* Logo
+========================================================================== */
 
 .c-header__logo {
 
   display: inline-block;
   float: left;
-  margin-top: 30px;
-  width: 280px;
+  margin-top: 2.5rem;
   position: relative;
-  transition: all 0.4s ease-in-out;
+  box-sizing: content-box;
+  transition: $global-transition;
 
   /* animated line */
   &:before {
@@ -93,19 +23,83 @@
     top: 0;
     left: 0;
     float: left;
-    border-left: 1px solid #fff;
+    border-left: 0.0625rem solid #fff;
     height: 0;
   }
 }
 
 .c-header__logo-inner {
-  transition: all 0.4s ease-in-out;
+  transition: $global-transition;
+  width: 17.5rem;
+  height: auto;
+  fill: $color-red;
 }
+
+/* Active */
+
+@mixin c-header__logo-active {
+  .c-header__logo {
+
+    margin: 0;
+    width: 8.125rem;
+    height: 100%;
+    padding-left: 0.5625rem;
+    animation: c-header-logo 1ms linear 0.7s 1 normal forwards;
+
+    /* animated line */
+    &:before {
+      animation: c-header-line 0.3s linear 0.4s 1 normal forwards;
+    }
+  }
+
+  .c-header__logo-inner {
+
+    margin-top: 1.25rem;
+    width: 8.125rem;
+    //filter: brightness(0) invert(1);
+    fill: $color-white;
+  }
+
+  .c-header__logo-inner:hover {
+    fill: $color-red;
+  }
+}
+
+@keyframes c-header-line {
+  0% {
+    top: 2.1875rem;
+    height: 0;
+  }
+
+  100% {
+    top: 1.25rem;
+    height: 2rem;
+  }
+}
+
+@keyframes c-header-logo {
+  0% {
+    background: transparent;
+  }
+
+  100% {
+    background: $color-black;
+  }
+}
+
+/* Navigation
+========================================================================== */
 
 .c-header__navigation {
 
-  transition: line-height 0.4s ease-in-out;
   float: right;
+  margin-top: 2rem;
+  transition: $global-transition;
+
+  @include bp(small down) {
+
+    display: none;
+  }
 }
 
 .c-header__list {
@@ -115,7 +109,7 @@
 
 .c-header__list-el {
   &:not(:first-child) {
-    margin-left: 20px;
+    margin-left: 1.25rem;
   }
 }
 
@@ -123,43 +117,119 @@
 
   text-decoration: none;
   text-transform: uppercase;
-  color: #989898;
-  font-weight: bold;
-  font-family: AlegreyaSans;
-  font-size: 18px;
+  color: $color-white;
+  font-size: 0.9375rem;
+  position: relative;
+
+  &:after {
+
+    content: '';
+    transition: $global-transition;
+    display: block;
+    width: 1rem;
+    height: 0.0625rem;
+    background-color: $color-red;
+    margin: 8px auto 0;
+    position: absolute;
+    opacity: 0;
+    bottom: -0.625rem;
+    left: 0;
+    right: 0;
+  }
 
   &:hover {
 
-    color: #d13245;
+    color: $color-red;
+
+    &:after {
+
+      opacity: 1;
+      width: 100%;
+    }
   }
 }
 
-@keyframes header-line {
-  0% {
-    top: 35px;
-    height: 0;
+/* Active */
+
+@mixin c-header__navigation-active() {
+  .c-header__navigation {
+    margin-top: 1.5rem;
   }
 
-  100% {
-    top: 20px;
-    height: 32px;
+  .c-header__link {
+
+    color: #fff;
+
+    &:after {
+      bottom: -1.5rem;
+    }
+
+    &:hover {
+      color: $color-red;
+    }
   }
 }
 
-@keyframes header-logo-bg {
-  0% {
-    background: transparent;
+/* Bar
+========================================================================== */
+
+@mixin c-header-active() {
+
+  background: $color-black;
+  border-bottom: 0.0625rem solid $color-dark-grey;
+  height: 4.375rem;
+
+  /* THD logo */
+  .c-header__thd {
+    animation: header-thd 0.3s linear 0.7s 1 normal forwards;
   }
 
-  100% {
-    background: $header-bg-color;
+  @include c-header__navigation-active;
+  @include c-header__logo-active;
+}
+
+.c-header {
+
+  width: 100%;
+  height: 6.25rem;
+  position: fixed;
+  padding: 0 3.75rem;
+  z-index: 999;
+  transition: $global-transition;
+  border-bottom: 0 solid $color-dark-grey;
+
+  @include bp(medium down) {
+    @include c-header-active;
   }
+
+  @media #{bp(small down)} and #{bp(small only)} {
+    padding: 0 1.5rem;
+  }
+
+  /* THD logo */
+  .c-header__thd {
+    display: inline-block;
+    opacity: 0;
+    float: left;
+    width: 6.1875rem;
+    margin: 1.25rem -6.1875rem 0 0;
+    padding-right: 0.5625rem;
+    height: 2rem;
+    fill: #fff;
+  }
+}
+
+html:not(.no-js) .c-header.is-active {
+  @include c-header-active;
+}
+
+.no-js .c-header {
+  position: absolute;
 }
 
 @keyframes header-thd {
   0% {
-    margin-right: -99px;
-    opacity: 1;
+    margin-right: -6.1875rem;
   }
 
   100% {

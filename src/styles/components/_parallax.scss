@@ -1,0 +1,57 @@
+.c-parallax {
+
+  width: 100%;
+  position: relative;
+  min-height: 152vw;
+}
+
+.c-parallax__layers {
+
+  z-index: -2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(255, 78, 78, 1) 0%, rgba(73, 72, 88, 1) 40%, rgba(20, 23, 22, 1) 100%);
+
+  overflow: hidden;
+
+
+  @include bp(small down) {
+    display: none;
+  }
+}
+
+.c-parallax__layer {
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  /* stylelint-disable */
+  $prev: false;
+  @each $size in (small, medium, xlarge) {
+
+    $mq: if($prev != false, '#{bp($size)}, (-webkit-min-device-pixel-ratio: 2) and #{bp($prev)}, (min-resolution: 192dpi) and #{bp($prev)}', #{bp($size)});
+
+    @media #{$mq} {
+
+      @for $i from 1 through 7 {
+        &--#{$i} {
+          background-image: url('../assets/images/parallax/#{$size}/layer_#{$i}.png');
+          z-index: #{$i};
+        }
+      }
+    }
+
+    $prev: $size;
+  }
+  /* stylelint-enable */
+}

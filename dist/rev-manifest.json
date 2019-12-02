@@ -1,11 +1,8 @@
 {
-  "app.bundle.full.js": "app-0a2e247387.bundle.full.js",
-  "app.bundle.js": "app-e7e6366f68.bundle.js",
-  "app.bundle.js.map": "app-44a286ad68.bundle.js.map",
-  "main.css": "main-a166487020.css",
-  "main.css.map": "main-7676a1a549.css.map",
-  "main.full.css": "main-1f9494ac3f.full.css",
-  "vendor.full.js": "vendor-712fba68db.full.js",
-  "vendor.js": "vendor-78871fb05d.js",
-  "vendor.js.map": "vendor-0f9417a8ac.js.map"
+  "app.bundle.full.js": "app-d53271d28a.bundle.full.js",
+  "app.bundle.js": "app-a7eeb1d4d2.bundle.js",
+  "app.bundle.js.map": "app-9b633c5eb3.bundle.js.map",
+  "main.css": "main-42a899bbda.css",
+  "main.css.map": "main-59f1e08e78.css.map",
+  "main.full.css": "main-f1c3e2bbe8.full.css"
 }

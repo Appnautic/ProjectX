@@ -12,6 +12,7 @@ module.exports = function buildTask(gulp, plugins, config) {
       'scripts-build',
       'vendor-build',
       'templates-build',
+      'other-build',
       'validate-html'
     )
   );

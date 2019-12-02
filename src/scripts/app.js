@@ -4,5 +4,7 @@
  */
 
 import header from './modules/header';
+import parallax from './modules/parallax';
 
 header();
+parallax();

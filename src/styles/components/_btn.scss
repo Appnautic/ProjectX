@@ -2,59 +2,157 @@
    #BUTTONS
    ========================================================================== */
 
-/**
- * This is an example component. Extend inuitcss by building your own components
- * that make up your UI. Component classes are prefixed with a `c-`.
- */
-
-/**
- * 1. Allow us to style box model properties.
- * 2. Line different sized buttons up a little nicer.
- * 3. Make buttons inherit font styles (often necessary when styling `input`s as
- *    buttons).
- * 4. Reset/normalize some styles.
- * 5. Force all button-styled elements to appear clickable.
- */
-
 .c-btn {
-  display: inline-block; /* [1] */
-  vertical-align: middle; /* [2] */
-  font: inherit; /* [3] */
-  text-align: center; /* [4] */
-  margin: 0; /* [4] */
-  cursor: pointer; /* [5] */
-  padding: 0.5rem 1rem;
+
+  margin-bottom: 0.8rem;
+  display: inline-block;
+  padding: 0 5em;
+  height: 3.75em;
+  line-height: 3.75em;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
+  text-shadow: none;
+  text-align: center;
+  font-family: $font-sans-serif;
+
   transition: $global-transition;
   border-radius: $global-radius;
+
+  position: relative;
 }
 
 /* Style variants
    ========================================================================== */
 
 .c-btn--primary {
-  background-color: $color-link;
+  background: $color-red;
 
   &,
   &:hover,
   &:active,
   &:focus {
-    text-decoration: none; /* [4] */
+    text-decoration: none;
     color: $color-white;
   }
 
   &:hover,
   &:focus {
-    background-color: $color-hover;
+    box-shadow: 0 0 2rem 0.1rem rgba($color-red, 0.75);
+  }
+}
+
+.c-btn--secondary {
+  background: $color-green;
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+    color: $color-dark-grey;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 2rem 0.1rem rgba($color-green, 0.75);
+  }
+}
+
+.c-btn--pulse {
+  &:before {
+
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 0.5rem;
+
+    box-shadow: 0 0 0 rgba($color-white, 0.4);
+    animation: c-btn-animation-pulse 2s infinite;
+    transition: $global-transition;
+  }
+}
+
+.c-btn--steam {
+  background: $color-black;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+    color: $color-white;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 2rem 0.1rem rgba($color-black, 0.75);
+    color: $color-red;
+  }
+
+  .c-btn__inner {
+
+    position: relative;
+    padding-left: 3.5rem;
+  }
+
+  .c-btn__text {
+
+    transition: $global-transition;
+    margin-top: -1rem;
+  }
+
+  .c-btn__image {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto 0 auto 0;
+    width: 7.8125rem;
+    height: 2.1875rem;
+    fill: #fff;
   }
 }
 
 /* Size variants
    ========================================================================== */
 
+.c-btn--xsmall {
+  font-size: 0.5rem;
+}
+
 .c-btn--small {
-  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
 }
 
 .c-btn--large {
-  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
+}
+
+
+/* Animations
+   ========================================================================== */
+
+@keyframes c-btn-animation-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba($color-white, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 0.625rem rgba($color-white, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba($color-white, 0);
+  }
 }

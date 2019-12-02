@@ -8,8 +8,14 @@
  * http://csswizardry.com/2016/02/managing-typography-on-large-apps/).
  */
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  font-weight: normal;
+}
+
 h1 {
   font-size: 2.25rem;
+  font-weight: bold;
 }
 
 h2 {

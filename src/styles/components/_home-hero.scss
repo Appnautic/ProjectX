@@ -1,105 +1,125 @@
+/* ==========================================================================
+   #HOME HERO
+   ========================================================================== */
+
 .c-home-hero {
 
   position: relative;
   overflow: hidden;
   width: 100%;
-  min-height: 100%;
+  height: auto;
+  min-height: 100vh;
+  margin-bottom: 5rem;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+
+  @include bp(small) {
+    justify-content: flex-start;
+  }
+
+  @include bp(medium) {
+    height: 100vh;
+    min-height: 50vw;
+    align-items: flex-end;
+  }
+
+  @include bp(portrait) {
+    min-height: unset;
+    height: auto;
+  }
 }
 
+/* Content
+========================================================================== */
 
 .c-home-hero__content {
 
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-
+  float: left;
+  position: relative;
   z-index: 10;
-  left: 60px;
+  width: 80vw;
+  padding: 10rem 3rem 3rem;
 
-  max-width: 590px;
+  display: flex;
+  flex-direction: column;
+
+  @include bp(small down) {
+    padding: 6rem 1.5rem;
+    width: 100%;
+  }
 }
 
 .c-home-hero__heading {
 
-  font-family: Rubik;
-  font-size: 46px;
+  font-size: 2.5rem;
   font-weight: bold;
-  color: $color-white;
-  text-transform: uppercase;
-  text-shadow: 1px 1px #000;
+
+  strong {
+    color: $color-red;
+  }
 }
 
 .c-home-hero__text {
 
-  font-size: 18px;
-  color: $color-white;
-  margin-bottom: 2rem;
-  text-shadow: 1px 1px #000;
+  font-size: 0.875rem;
+  margin-bottom: 4rem;
 }
 
-.c-home-hero__steam-button {
+.c-home-hero__heading span,
+.c-home-hero__text {
 
-  display: block;
-  width: 280px;
-  height: 80px;
-  background: #000 url('../assets/images/steam_logo2.png') 40px center no-repeat;
-  background-size: 161px 50px;
-  border-radius: 8px;
-  color: #fff;
-  text-transform: uppercase;
-  padding: 14px 0 0 103px;
-  margin-bottom: 10px;
+  padding-left: 6rem;
 
-  span {
-
-    @include hidden-visually;
+  @include bp(medium down) {
+    padding-left: 0;
   }
 }
 
-.c-home-hero__download-button {
+/* Buttons */
 
-  width: 280px;
-  height: 80px;
-  background: #6cb524;
-  border-radius: 10px;
-  color: #fff;
-  padding-left: 123px;
+.c-home-hero__buttons {
+
+  width: 20.6875rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  position: relative;
+}
+
+
+.c-home-hero__trailer-link {
+
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 4rem;
+  width: 11rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: $color-medium-grey;
+  font-size: 0.85rem;
+  display: flex;
 
   &:hover {
-    color: inherit;
+    color: $color-white;
   }
 
-  span:first-child {
+  @include bp(medium down) {
 
-    font-size: 16px;
-    text-transform: uppercase;
-    margin-top: -5px;
-  }
-
-  span:last-child {
-
-    font-size: 14px;
-    color: #1b400a;
+    display: none;
   }
 }
 
-
-.c-home-hero__download-icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 10px 0 0 10px;
-  font-size: 28px;
+.c-home-hero__trailer-link-icon {
+  margin-right: 0.5rem;
 }
 
+
+/* Background
+========================================================================== */
 
 .c-home-hero__video {
 
@@ -108,9 +128,7 @@
   height: 120%;
   left: -20%;
   object-fit: cover;
-  //-webkit-filter: blur(5px);
-  opacity: 1;
-  filter: grayscale(100%) blur(4px);
+  filter: blur(4px);
 }
 
 .c-home-hero__bg {
@@ -120,39 +138,33 @@
   height: 100%;
   z-index: 2;
 
-  /*
-  background: -moz-linear-gradient(135deg, rgba(238, 9, 9, 0.3) 0%, rgba(0, 238, 255, 0.76) 100%);
-  background: -webkit-linear-gradient(135deg, rgba(238, 9, 9, 0.3) 0%, rgba(0, 238, 255, 0.76) 100%);
-  background: -o-linear-gradient(135deg, rgba(238, 9, 9, 0.3) 0%, rgba(0, 238, 255, 0.76) 100%);
-  background: -ms-linear-gradient(135deg, rgba(238, 9, 9, 0.3) 0%, rgba(0, 238, 255, 0.76) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c800cf', endColorstr='#00eeff', GradientType=1 );
-  background: linear-gradient(135deg, rgba(238, 9, 9, 0.3) 0%, rgba(0, 238, 255, 0.76) 100%);
-  */
-
-
   /* Rambo */
   &:before {
     content: '';
-    display: block;
-    background: url('../assets/images/header_bg.png') bottom right no-repeat;
+    display: none;
+    background: url('../assets/images/hero_bg.png') bottom right no-repeat;
     background-size: contain;
     width: 100%;
-    height: 100%;
+    height: 90%;
     position: absolute;
-    z-index: 3;
+    z-index: 4;
+    bottom: 0;
     //opacity:0.8;
+
+    @include bp(small) {
+      display: block;
+    }
   }
 
-  /* Pattern */
+  /* Shadow */
   &:after {
     content: '';
     display: block;
-    opacity: 1;
-    background: rgba(30, 42, 101, 0.3) url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAD0lEQVQImWNgYmKayYAMAAjQAKCnXPTPAAAAAElFTkSuQmCC') repeat;
+    position: absolute;
     width: 100%;
     height: 100%;
-    position: absolute;
-    z-index: 4;
+    box-shadow: inset 0 0 10rem 8rem $color-dark-grey;
+    z-index: 3;
   }
 }
 
@@ -162,9 +174,8 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  box-shadow: inset 0 165px 121px -58px #000;
+  box-shadow: inset 0 10.3125rem 7.5625rem -3.625rem $color-dark-grey;
   z-index: 5;
-
 
   /* Bottom shadow */
   &:after {
@@ -174,19 +185,21 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    box-shadow: inset 0 -142px 93px -45px #171300;
+    box-shadow: inset 0 -8.875rem 5.8125rem -2.8125rem $color-dark-grey;
     z-index: 6;
   }
 
-  /* Grass */
-  &:before {
 
+  /* Pattern */
+  /*
+  &:after {
     content: '';
     display: block;
-    position: absolute;
+    opacity: 1;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAD0lEQVQImWNgYmKayYAMAAjQAKCnXPTPAAAAAElFTkSuQmCC') repeat;
     width: 100%;
     height: 100%;
-    background: url('../assets/images/grass_bg.png') bottom left repeat-x;
-    z-index: 7;
-  }
+    position: absolute;
+    z-index: 3;
+  } */
 }
