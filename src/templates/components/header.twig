@@ -1,25 +1,35 @@
-<header class="c-header js-header">
+<header class="c-header {{ pageName != 'Index' ? 'is-active' }} js-header">
 
+  <div class="c-header__logos">
     <svg viewBox="0 0 474 163" xmlns="http://www.w3.org/2000/svg" class="c-header__thd">
       <use xlink:href="assets/images/sprite.svg#thd-symbol" x="0" y="0" width="163" height="163" fill="#d13245"></use>
       <use xlink:href="assets/images/sprite.svg#thd-text" x="182" y="24" width="292" height="115"></use>
     </svg>
 
     <a href="/" rel="home" class="c-header__logo">
-        <svg viewBox="0 0 280 62" xmlns="http://www.w3.org/2000/svg" class="c-header__logo-inner">
-            <use xlink:href="assets/images/sprite.svg#soldat"></use>
-        </svg>
+      <svg viewBox="0 0 280 62" xmlns="http://www.w3.org/2000/svg" class="c-header__logo-inner">
+        <use xlink:href="http://localhost:3000/dist/assets/images/sprite.svg#soldat"></use>
+      </svg>
     </a>
+  </div>
 
-    <nav class="c-header__navigation">
-        <ul class="c-header__list">
-            <li class="c-header__list-el"><a href="#" class="c-header__link">About</a></li>
-            <li class="c-header__list-el"><a href="#" class="c-header__link">Blog</a></li>
-            <li class="c-header__list-el"><a href="#" class="c-header__link">Leaderboards</a></li>
-            <li class="c-header__list-el"><a href="#" class="c-header__link">Media</a></li>
-            <li class="c-header__list-el"><a href="#" class="c-header__link">Community</a></li>
-        </ul>
-    </nav>
+  <nav class="c-header__navigation">
+
+    <input type="checkbox" class="c-header__toggle" id="c-header__toggle">
+    <label for="c-header__toggle" class="c-header__hamburger">
+      <span class="c-header__hamburger-line c-header__hamburger-line--1"></span>
+      <span class="c-header__hamburger-line c-header__hamburger-line--2"></span>
+      <span class="c-header__hamburger-line c-header__hamburger-line--3"></span>
+    </label>
+
+    <ul class="c-header__list">
+      <li class="c-header__list-el"><a href="#" class="c-header__link">About</a></li>
+      <li class="c-header__list-el"><a href="#" class="c-header__link">Blog</a></li>
+      <li class="c-header__list-el"><a href="#" class="c-header__link">Leaderboards</a></li>
+      <li class="c-header__list-el"><a href="#" class="c-header__link">Media</a></li>
+      <li class="c-header__list-el"><a href="#" class="c-header__link">Community</a></li>
+    </ul>
+  </nav>
 
 </header>
 

@@ -2,9 +2,16 @@
    #HEADER
    ========================================================================== */
 
-/* Logo
+/* Logos
 ========================================================================== */
 
+.c-header__logos {
+
+  position: relative;
+  z-index: 2;
+}
+
+/* Soldat logo */
 .c-header__logo {
 
   display: inline-block;
@@ -35,6 +42,18 @@
   fill: $color-red;
 }
 
+/* THD Logo */
+.c-header__thd {
+  display: inline-block;
+  opacity: 0;
+  float: left;
+  width: 6.1875rem;
+  margin: 1.25rem -6.1875rem 0 0;
+  padding-right: 0.5625rem;
+  height: 2rem;
+  fill: #fff;
+}
+
 /* Active */
 
 @mixin c-header__logo-active {
@@ -63,6 +82,12 @@
   .c-header__logo-inner:hover {
     fill: $color-red;
   }
+
+  /* THD logo */
+  .c-header__thd {
+    animation: header-thd 0.3s linear 0.7s 1 normal forwards;
+  }
+
 }
 
 @keyframes c-header-line {
@@ -95,22 +120,26 @@
   float: right;
   margin-top: 2rem;
   transition: $global-transition;
-
-  @include bp(small down) {
-
-    display: none;
-  }
 }
 
 .c-header__list {
+
+  position: relative;
+  flex-direction: row;
+  transform: none;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  transition: none;
+  background: none;
+  z-index: 2;
   list-style: none;
   display: flex;
 }
 
 .c-header__list-el {
-  &:not(:first-child) {
-    margin-left: 1.25rem;
-  }
+
+    padding: 0 0 0 1.25rem;
 }
 
 .c-header__link {
@@ -127,9 +156,10 @@
     transition: $global-transition;
     display: block;
     width: 1rem;
-    height: 0.0625rem;
+    max-width: 100%;
+    height: 0.07rem;
     background-color: $color-red;
-    margin: 8px auto 0;
+    margin: 0.5rem auto 0;
     position: absolute;
     opacity: 0;
     bottom: -0.625rem;
@@ -137,6 +167,7 @@
     right: 0;
   }
 
+  &.is-active,
   &:hover {
 
     color: $color-red;
@@ -149,43 +180,182 @@
   }
 }
 
-/* Active */
+.c-header__hamburger {
 
-@mixin c-header__navigation-active() {
-  .c-header__navigation {
-    margin-top: 1.5rem;
+  display: none;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: absolute;
+  z-index: 99;
+  top: 1.625rem;
+  right: 1.5rem;
+  height: 1.375rem;
+  width: 1.375rem;
+
+  .c-header__hamburger-line {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: absolute;
+    height: 0.1875rem;
+    width: 100%;
+    background-color: #fff;
+    display: block;
+
+    &--1 {
+      position: relative;
+      transition: all 0.3s;
+      box-sizing: border-box;
+      float: left;
+    }
+
+    &--2 {
+      transition: all 0.3s;
+      box-sizing: border-box;
+      position: relative;
+      float: left;
+      margin-top: 0.1875rem;
+    }
+
+    &--3 {
+      transition: all 0.3s;
+      box-sizing: border-box;
+      position: relative;
+      float: left;
+      margin-top: 0.1875rem;
+    }
   }
 
-  .c-header__link {
+}
 
-    color: #fff;
+.c-header__toggle {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  display: none;
 
-    &:after {
-      bottom: -1.5rem;
+  &:checked ~ .c-header__list {
+    transform: translateX(0);
+  }
+
+  &:checked ~ .c-header__hamburger .c-header__hamburger-line {
+
+    &--1 {
+      transition: all 0.3s;
+      box-sizing: border-box;
+      transform: rotate(135deg);
+      margin-top: 0.5rem;
     }
 
-    &:hover {
-      color: $color-red;
+    &--2 {
+      transition: all 0.3s;
+      box-sizing: border-box;
+      opacity: 0;
     }
+
+    &--3 {
+      transition: all 0.3s;
+      box-sizing: border-box;
+      transform: rotate(-135deg);
+      margin-top: -0.5625rem;
+    }
+  }
+
+}
+
+/* Active */
+
+@mixin c-header__navigation-active($hidden-menu: false) {
+
+  @if ($hidden-menu) {
+
+    .c-header__list {
+
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      flex-direction: column;
+      margin: 1px 0 0 0;
+      padding: 1rem 0;
+      transform: translateY(-101%);
+      transition: transform $global-transition-duration $global-transition-easing;
+      background: $color-black;
+      z-index: 0;
+    }
+
+    .c-header__list-el {
+
+      position: relative;
+      padding: 1rem 2rem;
+      margin: 0;
+    }
+
+    .c-header__link {
+      position: static;
+    }
+
+    .c-header__link:after {
+      height: 100%;
+      width: 0.07rem;
+      bottom: auto;
+      left: 0;
+      top: 0;
+      right: auto;
+      margin: 0;
+    }
+
+    .c-header__hamburger {
+      display: block;
+    }
+
+  } @else {
+
+    .c-header__navigation {
+      margin-top: 1.5rem;
+    }
+
+    .c-header__link {
+
+      color: #fff;
+
+      &:after {
+        bottom: -1.5rem;
+      }
+
+      &.is-active,
+      &:hover {
+        color: $color-red;
+      }
+    }
+
   }
 }
 
 /* Bar
 ========================================================================== */
 
-@mixin c-header-active() {
+@mixin c-header-active($hidden-menu: false) {
 
   background: $color-black;
   border-bottom: 0.0625rem solid $color-dark-grey;
   height: 4.375rem;
 
-  /* THD logo */
-  .c-header__thd {
-    animation: header-thd 0.3s linear 0.7s 1 normal forwards;
+  @include c-header__navigation-active($hidden-menu);
+  @include c-header__logo-active;
+
+  &:before {
+
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $color-black;
+    z-index: 1;
   }
 
-  @include c-header__navigation-active;
-  @include c-header__logo-active;
 }
 
 .c-header {
@@ -193,38 +363,29 @@
   width: 100%;
   height: 6.25rem;
   position: fixed;
-  padding: 0 3.75rem;
+  padding: 0 1.5rem;
   z-index: 999;
   transition: $global-transition;
   border-bottom: 0 solid $color-dark-grey;
 
+  @include bp(medium) {
+    padding: 0 3rem;
+  }
+
   @include bp(medium down) {
-    @include c-header-active;
+    @include c-header-active(true);
   }
 
-  @media #{bp(small down)} and #{bp(small only)} {
-    padding: 0 1.5rem;
-  }
-
-  /* THD logo */
-  .c-header__thd {
-    display: inline-block;
-    opacity: 0;
-    float: left;
-    width: 6.1875rem;
-    margin: 1.25rem -6.1875rem 0 0;
-    padding-right: 0.5625rem;
-    height: 2rem;
-    fill: #fff;
-  }
 }
 
 html:not(.no-js) .c-header.is-active {
   @include c-header-active;
 }
 
-.no-js .c-header {
-  position: absolute;
+@include bp(medium){
+  .no-js .c-header:not(.is-active) {
+    position: absolute;
+  }
 }
 
 @keyframes header-thd {

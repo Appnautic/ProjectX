@@ -3,11 +3,13 @@ class Header {
     this.nav = document.querySelector('.js-header');
     if (!this.nav) return;
 
-    window.onscroll = () => {
-      this.setup();
-    };
+    if (!this.nav.classList.contains('is-active')) {
+      window.onscroll = () => {
+        this.setup();
+      };
 
-    this.setup();
+      this.setup();
+    }
   }
 
   setup() {
