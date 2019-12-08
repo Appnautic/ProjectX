@@ -102,6 +102,8 @@
   color: $color-medium-grey;
   font-size: 0.85rem;
   display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     color: $color-white;
@@ -114,7 +116,7 @@
 }
 
 .c-home-hero__trailer-link-icon {
-  margin-right: 0.5rem;
+  margin: 0 0.5rem 0 0;
 }
 
 
