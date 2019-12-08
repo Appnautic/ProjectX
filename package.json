@@ -92,7 +92,8 @@
     "webpack-stream": "^4.0.2"
   },
   "dependencies": {
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "svgxuse": "^1.2.6"
   },
   "engines": {
     "node": "^8.10.0 || ^10.13.0"
