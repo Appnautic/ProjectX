@@ -108,6 +108,17 @@
   }
 }
 
+@keyframes header-thd {
+  0% {
+    margin-right: -6.1875rem;
+  }
+
+  100% {
+    margin-right: 0;
+    opacity: 1;
+  }
+}
+
 /* Navigation
 ========================================================================== */
 
@@ -246,6 +257,7 @@
       transition: transform $global-transition-duration $global-transition-easing;
       background: $color-black;
       z-index: 0;
+      border-bottom: 0.0625rem solid $color-dark-grey;
     }
 
     .c-header__list-el {
@@ -344,16 +356,5 @@
 
   html:not(.no-js) &.is-active {
     @include c-header-active;
-  }
-}
-
-@keyframes header-thd {
-  0% {
-    margin-right: -6.1875rem;
-  }
-
-  100% {
-    margin-right: 0;
-    opacity: 1;
   }
 }

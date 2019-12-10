@@ -4,31 +4,30 @@ class Parallax {
     this.layers = this.parallaxContainer.children;
 
     this.setup();
+
+    window.addEventListener('scroll', () => {
+      this.setup();
+    });
   }
 
   setup() {
-    window.addEventListener('scroll', () => {
-      const parallax = () => {
-        const rect = this.parallaxContainer.getBoundingClientRect();
-        const top = rect.top - window.innerHeight;
-        const h = this.parallaxContainer.offsetHeight;
+    const rect = this.parallaxContainer.getBoundingClientRect();
+    const top = rect.top - window.innerHeight;
+    const h = this.parallaxContainer.offsetHeight;
 
-        let layer = null;
-        let speed = null;
-        let yPos = null;
+    let layer = null;
+    let speed = null;
+    let yPos = null;
 
-        if (top < 0) {
-          for (let i = 0; i < this.layers.length; i += 1) {
-            layer = this.layers[i];
-            speed = layer.getAttribute('data-speed');
-            yPos = Math.round(-(((top + h) * (100 - speed)) / 100));
+    if (top < 0) {
+      for (let i = 0; i < this.layers.length; i += 1) {
+        layer = this.layers[i];
+        speed = layer.getAttribute('data-speed');
+        yPos = Math.round(-(((top + h) * (100 - speed)) / 100));
 
-            layer.setAttribute('style', `transform: translateY(${yPos}px)`);
-          }
-        }
-      };
-      window.requestAnimationFrame(parallax);
-    });
+        layer.setAttribute('style', `transform: translateY(${yPos}px)`);
+      }
+    }
   }
 }
 export default () => new Parallax();

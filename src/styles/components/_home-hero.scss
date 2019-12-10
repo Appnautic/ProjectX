@@ -11,19 +11,9 @@
   min-height: 100vh;
   margin-bottom: 5rem;
 
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-
-
-  @include bp(small) {
-    justify-content: flex-start;
-  }
-
   @include bp(medium) {
     height: 100vh;
-    min-height: 50vw;
-    align-items: flex-end;
+    min-height: 55vw;
   }
 
   @include bp(portrait) {
@@ -40,25 +30,38 @@
   float: left;
   position: relative;
   z-index: 10;
-  width: 80vw;
-  padding: 10rem 3rem 3rem;
-
-  display: flex;
+  width: 100%;
+  padding: 6rem 1.5rem 0.5rem;
+  display: inline-flex;
   flex-direction: column;
+  align-items: center;
 
-  @include bp(small down) {
-    padding: 6rem 1.5rem;
-    width: 100%;
+  @include bp(small) {
+    padding: 10rem 3rem 3rem;
+    align-items: flex-start;
+  }
+
+  @include bp(medium) {
+    padding: 17rem 3rem 3rem;
+    position: absolute;
+    bottom: 0;
   }
 }
 
 .c-home-hero__heading {
 
-  font-size: 2.5rem;
   font-weight: bold;
 
   strong {
     color: $color-red;
+  }
+
+  @include bp(small down) {
+    text-align: center;
+
+    br {
+      display: none;
+    }
   }
 }
 
@@ -66,6 +69,11 @@
 
   font-size: 0.875rem;
   margin-bottom: 4rem;
+
+
+  @include bp(small down) {
+    text-align: center;
+  }
 }
 
 .c-home-hero__heading span,
@@ -126,9 +134,9 @@
 .c-home-hero__video {
 
   position: absolute;
-  width: 120%;
+  width: auto;
   height: 120%;
-  left: -20%;
+  left: 0;
   object-fit: cover;
   filter: blur(4px);
 }

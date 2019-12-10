@@ -3,4 +3,8 @@
   padding-top: 50vw;
   padding-bottom: 5rem;
   text-align: center;
+
+  @include bp(small down) {
+    padding-top: 0;
+  }
 }

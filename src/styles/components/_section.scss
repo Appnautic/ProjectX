@@ -1,18 +1,19 @@
 .c-section {
 
   padding: 0 2rem;
-
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
   margin-bottom: 5rem;
+
+  &--trailer {
+
+    @include bp(small down) {
+      padding: 0;
+    }
+  }
 }
 
 .c-section__heading {
 
   font-weight: bold;
   text-align: center;
-  font-size: 2.375rem;
   margin-bottom: 4rem;
 }
