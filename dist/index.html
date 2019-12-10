@@ -6,43 +6,55 @@
     <link rel="preload" href="assets/fonts/Trueno/TruenoSemiBold.woff2" as="font" type="font/woff2">
     <link rel="preload" href="assets/fonts/Trueno/TruenoExtraBold.woff2" as="font" type="font/woff2">
     <link rel="preload" href="assets/fonts/Roboto/Roboto-Regular.woff2" as="font" type="font/woff2">
-    <link rel="preload" href="assets/images/icons.svg" as="image" type="image/svg+xml">
+    <link rel="preload" href="assets/fonts/Roboto/Roboto-Bold.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="assets/images/sprite.svg" as="image" type="image/svg+xml">
 
-    <link rel="stylesheet" property="stylesheet" href="styles\main-42a899bbda.css" type="text/css">
+    <link rel="stylesheet" property="stylesheet" href="styles\main-c481d4b216.css" type="text/css">
     <title>Index - Soldat Page</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
-    <link rel="manifest" href="assets/images/favicons/site.webmanifest">
+    <link rel="manifest" href="site.webmanifest">
     <link rel="mask-icon" href="assets/images/favicons/safari-pinned-tab.svg" color="#191d1c">
     <link rel="shortcut icon" href="assets/images/favicons/favicon.ico">
     <meta name="msapplication-TileColor" content="#b91d47">
-    <meta name="msapplication-config" content="assets/images/favicons/browserconfig.xml">
+    <meta name="msapplication-config" content="browserconfig.xml">
     <meta name="theme-color" content="#191d1c">
 
     <script>
       document.documentElement.classList.remove('no-js');
     </script>
-    <script src="scripts\app-a7eeb1d4d2.bundle.js" defer></script>
+    <script src="scripts\vendor-2b3776c771.js" defer></script>
+    <script src="scripts\app-5b1720d080.bundle.js" defer></script>
 
   </head>
 
   <body class="">
-    <header class="c-header js-header">
+    <header class="c-header  js-header">
 
-      <svg viewBox="0 0 474 163" xmlns="http://www.w3.org/2000/svg" class="c-header__thd">
-        <use xlink:href="assets/images/sprite.svg#thd-symbol" x="0" y="0" width="163" height="163" fill="#d13245"></use>
-        <use xlink:href="assets/images/sprite.svg#thd-text" x="182" y="24" width="292" height="115"></use>
-      </svg>
-
-      <a href="/" rel="home" class="c-header__logo">
-        <svg viewBox="0 0 280 62" xmlns="http://www.w3.org/2000/svg" class="c-header__logo-inner">
-          <use xlink:href="assets/images/sprite.svg#soldat"></use>
+      <div class="c-header__logos">
+        <svg viewBox="0 0 474 163" xmlns="http://www.w3.org/2000/svg" class="c-header__thd">
+          <use xlink:href="assets/images/sprite.svg#thd-symbol" x="0" y="0" width="163" height="163" fill="#d13245"></use>
+          <use xlink:href="assets/images/sprite.svg#thd-text" x="182" y="24" width="292" height="115"></use>
         </svg>
-      </a>
+
+        <a href="/" rel="home" class="c-header__logo">
+          <svg viewBox="0 0 280 62" xmlns="http://www.w3.org/2000/svg" class="c-header__logo-inner">
+            <use xlink:href="assets/images/sprite.svg#soldat"></use>
+          </svg>
+        </a>
+      </div>
 
       <nav class="c-header__navigation">
+
+        <input type="checkbox" class="c-header__toggle" id="c-header__toggle">
+        <label for="c-header__toggle" class="c-header__hamburger">
+          <span class="c-header__hamburger-line c-header__hamburger-line--1"></span>
+          <span class="c-header__hamburger-line c-header__hamburger-line--2"></span>
+          <span class="c-header__hamburger-line c-header__hamburger-line--3"></span>
+        </label>
+
         <ul class="c-header__list">
           <li class="c-header__list-el"><a href="#" class="c-header__link">About</a></li>
           <li class="c-header__list-el"><a href="#" class="c-header__link">Blog</a></li>
@@ -77,7 +89,7 @@
         </div>
       </div>
 
-      <video class="c-home-hero__video" poster="assets/images/hero_video_poster.jpg" autoplay muted loop>
+      <video class="c-home-hero__video js-hero-video" poster="assets/images/hero_video_poster.jpg" autoplay muted loop>
         <source src="assets/video/Soldat.mp4" type="video/mp4">
       </video>
 
@@ -104,7 +116,7 @@
           <h2 class="c-section__heading">Game Specifications</h2>
         </section>
 
-        <section class="c-section">
+        <section class="c-section c-section--trailer">
           <h2 class="c-section__heading">Trailer</h2>
 
           <div class="o-video">
@@ -163,7 +175,7 @@
         </section>
 
         <section class="c-download-bottom">
-          <a href="#" class="c-btn c-btn--primary">Download now!</a>
+          <a href="#" class="c-btn c-btn--primary c-btn--small">Download now!</a>
         </section>
 
       </div>

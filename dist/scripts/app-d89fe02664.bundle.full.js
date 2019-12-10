@@ -89,11 +89,13 @@ function () {
     this.nav = document.querySelector('.js-header');
     if (!this.nav) return;
 
-    window.onscroll = function () {
-      _this.setup();
-    };
+    if (!this.nav.classList.contains('is-active')) {
+      window.onscroll = function () {
+        _this.setup();
+      };
 
-    this.setup();
+      this.setup();
+    }
   }
 
   _createClass(Header, [{
@@ -124,40 +126,36 @@ var Parallax =
 /*#__PURE__*/
 function () {
   function Parallax() {
+    var _this = this;
+
     parallax__classCallCheck(this, Parallax);
 
     this.parallaxContainer = document.querySelector('.js-parallax');
     this.layers = this.parallaxContainer.children;
     this.setup();
+    window.addEventListener('scroll', function () {
+      _this.setup();
+    });
   }
 
   parallax__createClass(Parallax, [{
     key: "setup",
     value: function setup() {
-      var _this = this;
+      var rect = this.parallaxContainer.getBoundingClientRect();
+      var top = rect.top - window.innerHeight;
+      var h = this.parallaxContainer.offsetHeight;
+      var layer = null;
+      var speed = null;
+      var yPos = null;
 
-      window.addEventListener('scroll', function () {
-        var parallax = function parallax() {
-          var rect = _this.parallaxContainer.getBoundingClientRect();
-
-          var top = rect.top - window.innerHeight;
-          var h = _this.parallaxContainer.offsetHeight;
-          var layer = null;
-          var speed = null;
-          var yPos = null;
-
-          if (top < 0) {
-            for (var i = 0; i < _this.layers.length; i += 1) {
-              layer = _this.layers[i];
-              speed = layer.getAttribute('data-speed');
-              yPos = Math.round(-((top + h) * (100 - speed) / 100));
-              layer.setAttribute('style', "transform: translateY(".concat(yPos, "px)"));
-            }
-          }
-        };
-
-        window.requestAnimationFrame(parallax);
-      });
+      if (top < 0) {
+        for (var i = 0; i < this.layers.length; i += 1) {
+          layer = this.layers[i];
+          speed = layer.getAttribute('data-speed');
+          yPos = Math.round(-((top + h) * (100 - speed) / 100));
+          layer.setAttribute('style', "transform: translateY(".concat(yPos, "px)"));
+        }
+      }
     }
   }]);
 
@@ -167,6 +165,47 @@ function () {
 /* harmony default export */ var parallax = (function () {
   return new Parallax();
 });
+// CONCATENATED MODULE: ./src/scripts/modules/hero.js
+function hero__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function hero__defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function hero__createClass(Constructor, protoProps, staticProps) { if (protoProps) hero__defineProperties(Constructor.prototype, protoProps); if (staticProps) hero__defineProperties(Constructor, staticProps); return Constructor; }
+
+var Hero =
+/*#__PURE__*/
+function () {
+  function Hero() {
+    var _this = this;
+
+    hero__classCallCheck(this, Hero);
+
+    this.video = document.querySelector('.js-hero-video');
+
+    window.onresize = function () {
+      _this.setup();
+    };
+
+    this.setup();
+  }
+
+  hero__createClass(Hero, [{
+    key: "setup",
+    value: function setup() {
+      if (window.screen.width < 1024) {
+        this.video.removeAttribute('autoplay');
+      } else {
+        this.video.setAttribute('autoplay', true);
+      }
+    }
+  }]);
+
+  return Hero;
+}();
+
+/* harmony default export */ var hero = (function () {
+  return new Hero();
+});
 // CONCATENATED MODULE: ./src/scripts/app.js
 /*
   Project: Soldat Page
@@ -174,8 +213,10 @@ function () {
  */
 
 
+
 header();
 parallax();
+hero();
 
 /***/ }),
 
