@@ -9,8 +9,8 @@
     <link rel="preload" href="assets/fonts/Roboto/Roboto-Bold.woff2" as="font" type="font/woff2">
     <link rel="preload" href="assets/images/sprite.svg" as="image" type="image/svg+xml">
 
-    <link rel="stylesheet" property="stylesheet" href="styles\main-c481d4b216.css" type="text/css">
-    <title>Index - Soldat Page</title>
+    <link rel="stylesheet" property="stylesheet" href="styles\main-7aff4f542b.css" type="text/css">
+    <title>Home - Soldat Page</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
@@ -25,13 +25,13 @@
     <script>
       document.documentElement.classList.remove('no-js');
     </script>
-    <script src="scripts\vendor-2b3776c771.js" defer></script>
-    <script src="scripts\app-5b1720d080.bundle.js" defer></script>
+    <script src="scripts\vendor-f38a7c3e3d.js" defer></script>
+    <script src="scripts\app-8f360fc0af.bundle.js" defer></script>
 
   </head>
 
-  <body class="">
-    <header class="c-header  js-header">
+  <body class="home">
+    <header class="c-header js-header">
 
       <div class="c-header__logos">
         <svg viewBox="0 0 474 163" xmlns="http://www.w3.org/2000/svg" class="c-header__thd">
@@ -66,119 +66,157 @@
 
     </header>
 
-    <section class="c-home-hero">
+    <main class="c-parallax">
+      <section class="c-home-hero">
 
-      <div class="c-home-hero__content">
+        <div class="c-home-hero__content">
 
-        <h1 class="c-home-hero__heading">Join The <strong>Game</strong>
-          and<br><span> Kill Anything That Moves!</span></h1>
-        <p class="c-home-hero__text">Soldat is an exciting unique side-view multiplayer action game.<br>
-          Played by hundreds of players at this moment.</p>
+          <h1 class="c-home-hero__heading">Join The <strong>Game</strong>
+            and<br><span> Kill Anything That Moves!</span></h1>
+          <p class="c-home-hero__text">Soldat is an exciting unique side-view multiplayer action game.<br>
+            Played by hundreds of players at this moment.</p>
 
-        <div class="c-home-hero__buttons">
-          <a href="#" class="c-btn c-btn--secondary c-btn--pulse">Play now for free</a>
-          <a href="#" class="c-btn c-btn--steam">
-            <div class="c-btn__inner">
-              <div class="c-btn__text">Download on <span class="u-hidden-visually">Steam</span></div>
-              <svg viewBox="0 0 443 123" xmlns="http://www.w3.org/2000/svg" class="c-btn__image">
-                <use xlink:href="assets/images/sprite.svg#steam-symbol" x="0" y="0" width="122" height="123"></use>
-                <use xlink:href="assets/images/sprite.svg#steam-text" x="200" y="70" width="243" height="47"></use>
-              </svg>
+          <div class="c-home-hero__buttons">
+            <a href="#" class="c-btn c-btn--secondary c-btn--pulse">Play now for free</a>
+            <a href="#" class="c-btn c-btn--steam">
+              <div class="c-btn__inner">
+                <div class="c-btn__text">Download on <span class="u-hidden-visually">Steam</span></div>
+                <svg viewBox="0 0 443 123" xmlns="http://www.w3.org/2000/svg" class="c-btn__image">
+                  <use xlink:href="assets/images/sprite.svg#steam-symbol" x="0" y="0" width="122" height="123"></use>
+                  <use xlink:href="assets/images/sprite.svg#steam-text" x="200" y="70" width="243" height="47"></use>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <video class="c-home-hero__video js-hero-video" poster="assets/images/home_hero/hero_video_poster.jpg" autoplay muted loop>
+          <source src="assets/video/Soldat.mp4" type="video/mp4">
+        </video>
+
+        <a href="#" class="c-home-hero__trailer-link">
+          <div class="o-icon o-icon--inline o-icon--icon-arrow-circle-down c-home-hero__trailer-link-icon">
+            <svg class="o-icon__symbol" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="assets/images/sprite.svg#arrow-circle-down"></use>
+            </svg>
+          </div>
+          Watch the trailer
+        </a>
+
+        <div class="c-home-hero__bg">
+          <div class="c-home-hero__bg-sec"></div>
+        </div>
+      </section>
+
+      <section class="o-section o-section--dark">
+        <div class="o-wrapper">
+          <h2 class="o-section__heading wow fadeInUp">About The Game</h2>
+          <div class="c-about">
+            <div class="c-about__content">
+              <div class="wow fadeInUp" data-wow-delay="0.2s">
+                <p>Soldat is an exciting unique side-view multiplayer action game. Played by hundreds of players at this
+                  moment. It takes the best from games like Liero, Worms, Quake and Counter-Strike and gives you fast
+                  action
+                  gameplay with tons of blood and flesh. Little ragdoll soldiers fight against each other on 2D battle
+                  arenas
+                  using a deadly military arsenal. This is what multiplayer was invented for.</p>
+                <p>Pure fun, addictive kill'em all gameplay.</p>
+              </div>
+              <div class="wow fadeInUp" data-wow-delay="0.4s">
+                <h5 class="c-about__requirements-heading">Game specifications</h5>
+                <p class="c-about__requirements-text">Windows 7+/Linux/OS X, Core 2 Duo, 512 MB RAM, OpenGL 2.1, 150 MB
+                  available space</p>
+              </div>
             </div>
-          </a>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <video class="c-home-hero__video js-hero-video" poster="assets/images/hero_video_poster.jpg" autoplay muted loop>
-        <source src="assets/video/Soldat.mp4" type="video/mp4">
-      </video>
-
-      <a href="#" class="c-home-hero__trailer-link">
-        <div class="o-icon o-icon--inline o-icon--icon-arrow-circle-down c-home-hero__trailer-link-icon">
-          <svg class="o-icon__symbol" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="assets/images/sprite.svg#arrow-circle-down"></use>
-          </svg>
+      <section class="o-section">
+        <div class="o-wrapper">
+          <h2 class="o-section__heading wow fadeInUp">Screenshots</h2>
+          <ul class="c-screenshots wow fadeInUp" data-wow-delay="0.2s">
+            <li class="c-screenshots__item"><a href="#" class="c-screenshots__link"><img src="assets/images/screenshots/ss_1_thumb.jpg" class="c-screenshots__thumb" alt=""></a></li>
+            <li class="c-screenshots__item"><a href="#" class="c-screenshots__link"><img src="assets/images/screenshots/ss_2_thumb.jpg" class="c-screenshots__thumb" alt=""></a></li>
+            <li class="c-screenshots__item"><a href="#" class="c-screenshots__link"><img src="assets/images/screenshots/ss_3_thumb.jpg" class="c-screenshots__thumb" alt=""></a></li>
+            <li class="c-screenshots__item"><a href="#" class="c-screenshots__link"><img src="assets/images/screenshots/ss_4_thumb.jpg" class="c-screenshots__thumb" alt=""></a></li>
+            <li class="c-screenshots__item"><a href="#" class="c-screenshots__link"><img src="assets/images/screenshots/ss_5_thumb.jpg" class="c-screenshots__thumb" alt=""></a></li>
+            <li class="c-screenshots__item"><a href="#" class="c-screenshots__link"><img src="assets/images/screenshots/ss_6_thumb.jpg" class="c-screenshots__thumb" alt=""></a></li>
+          </ul>
         </div>
-        Watch the trailer
-      </a>
+      </section>
 
-      <div class="c-home-hero__bg">
-        <div class="c-home-hero__bg-sec"></div>
-      </div>
-    </section>
-
-    <div class="c-parallax">
-
-      <div class="o-wrapper">
-
-        <section class="c-section">
-          <h2 class="c-section__heading">About The Game</h2>
-          <h2 class="c-section__heading">Game Specifications</h2>
-        </section>
-
-        <section class="c-section c-section--trailer">
-          <h2 class="c-section__heading">Trailer</h2>
-
-          <div class="o-video">
+      <section class="o-section o-section--trailer">
+        <div class="o-wrapper">
+          <h2 class="o-section__heading wow fadeInUp">Trailer</h2>
+          <div class="o-video wow fadeIn" data-wow-delay="0.2s">
             <iframe src="https://www.youtube.com/embed/Zc-qvTq_mrY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="c-section">
-          <h2 class="c-section__heading">Screenshots</h2>
-        </section>
-
-        <section class="c-section">
-          <h2 class="c-section__heading">Discover Game Features</h2>
+      <section class="o-section">
+        <div class="o-wrapper">
+          <h2 class="o-section__heading wow fadeInUp">Discover Game Features</h2>
 
           <ul class="c-features">
             <li class="c-features__item">
-
-              <img src="assets/images/features/gametypes.png" alt="Gametypes" class="c-features__image">
-
+              <img src="assets/images/features/gametypes.png" alt="Gametypes" class="c-features__image wow fadeInRight" data-wow-delay="0.2s">
               <div class="c-features__content">
-                <h3 class="c-features__heading u-color-red">There are so many game types</h3>
-                <p class="c-features__text">Soldat has seven main game modes: Deathmatch, Pointmatch,
-                  Teammatch, Rambomatch, Capture the Flag, Infiltration, Hold the Flag. It also has three
-                  additional sub-game modes: Realistic, Survival , Advance.</p>
-                <p class="c-features__text">New sub game modes showed up within the years, thanks to
-                  Soldat's community. Some managed to overcome default modes within time thanks to their
-                  refreshing ideas and good modding community behind them. Even today some of those still
-                  have a strong positions in Soldat.</p>
+                <h3 class="c-features__heading u-color-red wow fadeInUp" data-wow-delay="0.2s">There are so many game
+                  types</h3>
+                <div class="wow fadeInUp" data-wow-delay="0.4s">
+                  <p class="c-features__text">Soldat has seven main game modes: Deathmatch, Pointmatch,
+                    Teammatch, Rambomatch, Capture the Flag, Infiltration, Hold the Flag. It also has three
+                    additional sub-game modes: Realistic, Survival , Advance.</p>
+                  <p class="c-features__text">New sub game modes showed up within the years, thanks to
+                    Soldat's community. Some managed to overcome default modes within time thanks to their
+                    refreshing ideas and good modding community behind them. Even today some of those still
+                    have a strong positions in Soldat.</p>
+                </div>
               </div>
             </li>
             <li class="c-features__item">
 
-              <img src="assets/images/features/maps.png" alt="Gametypes" class="c-features__image">
+              <img src="assets/images/features/maps.png" alt="Gametypes" class="c-features__image wow fadeInLeft" data-wow-delay="0.2s">
 
               <div class="c-features__content">
-                <h3 class="c-features__heading u-color-orange">2 Milion Maps Created</h3>
-                <p class="c-features__text">Soldat has seven main game modes: Deathmatch, Pointmatch,
-                  Teammatch, Rambomatch, Capture the Flag, Infiltration, Hold the Flag. It also has three
-                  additional sub-game modes: Realistic, Survival , Advance.</p>
-                <p class="c-features__text">New sub game modes showed up within the years, thanks to
-                  Soldat's community. Some managed to overcome default modes within time thanks to their
-                  refreshing ideas and good modding community behind them. Even today some of those still
-                  have a strong positions in Soldat.</p>
+                <h3 class="c-features__heading u-color-orange wow fadeInUp" data-wow-delay="0.2s">2 Milion Maps
+                  Created</h3>
+                <div class="wow fadeInUp" data-wow-delay="0.4s">
+                  <p class="c-features__text">Soldat has seven main game modes: Deathmatch, Pointmatch,
+                    Teammatch, Rambomatch, Capture the Flag, Infiltration, Hold the Flag. It also has three
+                    additional sub-game modes: Realistic, Survival , Advance.</p>
+                  <p class="c-features__text">New sub game modes showed up within the years, thanks to
+                    Soldat's community. Some managed to overcome default modes within time thanks to their
+                    refreshing ideas and good modding community behind them. Even today some of those still
+                    have a strong positions in Soldat.</p>
+                </div>
               </div>
             </li>
             <li class="c-features__item">
-              <img src="assets/images/features/placeholder.png" alt="Modding" class="c-features__image">
+              <img src="assets/images/features/placeholder.png" alt="Modding" class="c-features__image wow fadeInRight" data-wow-delay="0.2s">
               <div class="c-features__content">
-                <h3 class="c-features__heading u-color-green">Modding, Community, Leagues etc</h3>
-                <p class="c-features__text">Soldat has seven main game modes: Deathmatch, Pointmatch,
-                  Teammatch, Rambomatch, Capture the Flag, Infiltration, Hold the Flag. It also has three
-                  additional sub-game modes: Realistic, Survival , Advance.</p>
+                <h3 class="c-features__heading u-color-green wow fadeInUp" data-wow-delay="0.2s">Modding, Community,
+                  Leagues etc</h3>
+                <div class="wow fadeInUp" data-wow-delay="0.4s">
+                  <p class="c-features__text">Soldat has seven main game modes: Deathmatch, Pointmatch,
+                    Teammatch, Rambomatch, Capture the Flag, Infiltration, Hold the Flag. It also has three
+                    additional sub-game modes: Realistic, Survival , Advance.</p>
+                </div>
               </div>
             </li>
           </ul>
-        </section>
+        </div>
+      </section>
 
-        <section class="c-download-bottom">
-          <a href="#" class="c-btn c-btn--primary c-btn--small">Download now!</a>
-        </section>
-
-      </div>
+      <section class="c-download-bottom">
+        <div class="o-wrapper">
+          <h2 class="c-download-bottom__heading wow fadeInUp" data-wow-delay="1s">Start Playing With Your Friends<br>Blah
+            Blah Blah!</h2>
+          <a href="#" class="c-btn c-btn--primary c-btn--small wow zoomIn" data-wow-delay="0.5s">Download now!</a>
+        </div>
+      </section>
 
       <div class="c-parallax__layers js-parallax">
         <div class="c-parallax__layer c-parallax__layer--1" data-speed="35"></div>
@@ -189,8 +227,7 @@
         <div class="c-parallax__layer c-parallax__layer--6" data-speed="85"></div>
         <div class="c-parallax__layer c-parallax__layer--7" data-speed="90"></div>
       </div>
-
-    </div>
+    </main>
 
     <footer class="c-footer">
 
