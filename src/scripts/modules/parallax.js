@@ -8,6 +8,10 @@ class Parallax {
     window.addEventListener('scroll', () => {
       this.setup();
     });
+
+    window.addEventListener('resize', () => {
+      this.setup();
+    });
   }
 
   setup() {

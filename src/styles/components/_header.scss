@@ -165,7 +165,7 @@
     width: 1rem;
     max-width: 100%;
     height: 0.07rem;
-    background-color: $color-red;
+    background-color: $color-blue;
     margin: 0.5rem auto 0;
     position: absolute;
     opacity: 0;
@@ -177,7 +177,7 @@
   &.is-active,
   &:hover {
 
-    color: $color-red;
+    color: $color-blue;
 
     &:after {
 
@@ -251,13 +251,13 @@
       left: 0;
       width: 100%;
       flex-direction: column;
-      margin: 1px 0 0 0;
+      margin: 0.0625rem 0 0 0;
       padding: 1rem 0;
       transform: translateY(-101%);
       transition: transform $global-transition-duration $global-transition-easing;
       background: $color-black;
       z-index: 0;
-      border-bottom: 0.0625rem solid $color-dark-grey;
+      border-bottom: 0.0625rem solid $color-dark-violet;
     }
 
     .c-header__list-el {
@@ -295,12 +295,12 @@
       color: #fff;
 
       &:after {
-        bottom: -1.5rem;
+        bottom: -1.45rem;
       }
 
       &.is-active,
       &:hover {
-        color: $color-red;
+        color: $color-blue;
       }
     }
   }
@@ -337,6 +337,7 @@
   width: 100%;
   height: 6.25rem;
   position: fixed;
+  top: 0;
   padding: 0 1.5rem;
   z-index: 999;
   transition: $global-transition;
@@ -354,7 +355,8 @@
     @include c-header-active(true);
   }
 
-  html:not(.no-js) &.is-active {
+  html:not(.no-js) &.is-active,
+  html:not(.no-js) body:not(.home) & {
     @include c-header-active;
   }
 }

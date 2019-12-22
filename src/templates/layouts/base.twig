@@ -1,60 +1,73 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preload" href="assets/fonts/Trueno/TruenoSemiBold.woff2" as="font" type="font/woff2">
-    <link rel="preload" href="assets/fonts/Trueno/TruenoExtraBold.woff2" as="font" type="font/woff2">
-    <link rel="preload" href="assets/fonts/Roboto/Roboto-Regular.woff2" as="font" type="font/woff2">
-    <link rel="preload" href="assets/fonts/Roboto/Roboto-Bold.woff2" as="font" type="font/woff2">
-    <link rel="preload" href="assets/images/sprite.svg" as="image" type="image/svg+xml">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preload" href="assets/fonts/Trueno/TruenoSemiBold.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="assets/fonts/Trueno/TruenoExtraBold.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="assets/fonts/Roboto/Roboto-Regular.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="assets/fonts/Roboto/Roboto-Bold.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="assets/images/sprite.svg" as="image" type="image/svg+xml">
 
-    <link rel="stylesheet" property="stylesheet" href="{{ revisionedPath('styles/main.css') }}" type="text/css">
-    <title>{{ pageName }} - Soldat Page</title>
+  <link rel="stylesheet" property="stylesheet" href="{{ revisionedPath('styles/main.css') }}" type="text/css">
+  <title>{{ pageName }} - Soldat Page</title>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="mask-icon" href="assets/images/favicons/safari-pinned-tab.svg" color="#191d1c">
-    <link rel="shortcut icon" href="assets/images/favicons/favicon.ico">
-    <meta name="msapplication-TileColor" content="#b91d47">
-    <meta name="msapplication-config" content="browserconfig.xml">
-    <meta name="theme-color" content="#191d1c">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="assets/images/favicons/safari-pinned-tab.svg" color="#191d1c">
+  <link rel="shortcut icon" href="assets/images/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#b91d47">
+  <meta name="msapplication-config" content="browserconfig.xml">
+  <meta name="theme-color" content="#191d1c">
 
-    <script>document.documentElement.classList.remove('no-js');</script>
-    {% if hasVendor() %}
-        <script src="{{ revisionedPath('scripts/vendor.js') }}" defer></script>
-    {% endif %}
-    {% if hasWebpackManifest() %}
-        <script>
-            (function () {
-                var p = '{{ getScriptsPath() }}';
-                var wm = window.webpackManifest = {{ getWebpackManifest() }};
-                Object.keys(wm).forEach(function (n) {
-                    wm[n] = p + wm[n]
-                });
-            })();
-        </script>
-    {% endif %}
-    <script src="{{ revisionedPath('scripts/app.bundle.js') }}" defer></script>
+  <script>document.documentElement.classList.remove('no-js');</script>
+  {% if hasVendor() %}
+    <script src="{{ revisionedPath('scripts/vendor.js') }}" defer></script>
+  {% endif %}
+  {% if hasWebpackManifest() %}
+    <script>
+      (function () {
+        var p = '{{ getScriptsPath() }}';
+        var wm = window.webpackManifest = {{ getWebpackManifest() }};
+        Object.keys(wm).forEach(function (n) {
+          wm[n] = p + wm[n]
+        });
+      })();
+    </script>
+  {% endif %}
+  <script src="{{ revisionedPath('scripts/app.bundle.js') }}" defer></script>
 
-    {% block head %}
-    {% endblock %}
+  {% block head %}
+  {% endblock %}
 </head>
 
-<body class="{{ body_class }}">
+<body class="{{ bodyClass }}">
 {% block header %}
-    {% include 'components/header.twig' %}
+  {% include 'components/header.twig' %}
 {% endblock %}
 
-{% block content %}
+<main class="{{ hasParallax ? 'c-parallax' }}">
+  {% block content %}
     Sorry, no content
-{% endblock %}
+  {% endblock %}
 
+  {% if hasParallax %}
+  <div class="c-parallax__layers js-parallax">
+    <div class="c-parallax__layer c-parallax__layer--1" data-speed="35"></div>
+    <div class="c-parallax__layer c-parallax__layer--2" data-speed="45"></div>
+    <div class="c-parallax__layer c-parallax__layer--3" data-speed="50"></div>
+    <div class="c-parallax__layer c-parallax__layer--4" data-speed="65"></div>
+    <div class="c-parallax__layer c-parallax__layer--5" data-speed="70"></div>
+    <div class="c-parallax__layer c-parallax__layer--6" data-speed="85"></div>
+    <div class="c-parallax__layer c-parallax__layer--7" data-speed="90"></div>
+  </div>
+  {% endif %}
+</main>
 
 {% block footer %}
-    {% include 'components/footer.twig' %}
+  {% include 'components/footer.twig' %}
 {% endblock %}
 </body>
 </html>

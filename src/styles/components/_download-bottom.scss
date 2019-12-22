@@ -1,10 +1,16 @@
 .c-download-bottom {
 
-  padding-top: 50vw;
-  padding-bottom: 5rem;
+  padding-top: 5vw;
+  padding-bottom: 20rem;
   text-align: center;
 
   @include bp(small down) {
-    padding-top: 0;
+    padding: 4rem 0 8rem;
+    background: rgba(255, 255, 255, 0.04);
   }
+}
+
+.c-download-bottom__heading {
+
+  margin-bottom: 3rem;
 }

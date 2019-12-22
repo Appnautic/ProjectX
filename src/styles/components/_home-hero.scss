@@ -9,16 +9,21 @@
   width: 100%;
   height: auto;
   min-height: 100vh;
-  margin-bottom: 5rem;
 
   @include bp(medium) {
     height: 100vh;
-    min-height: 55vw;
+    min-height: 49vw;
   }
 
   @include bp(portrait) {
     min-height: unset;
     height: auto;
+  }
+
+  @include bp(small down) {
+    height: 100vh;
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -58,7 +63,9 @@
 
   @include bp(small down) {
     text-align: center;
+  }
 
+  @include bp(xsmall down) {
     br {
       display: none;
     }
@@ -152,17 +159,24 @@
   &:before {
     content: '';
     display: none;
-    background: url('../assets/images/hero_bg.png') bottom right no-repeat;
+    background: url('../assets/images/home_hero/hero_bg_small.png') bottom right no-repeat;
     background-size: contain;
     width: 100%;
-    height: 90%;
+    height: 88%;
     position: absolute;
     z-index: 4;
     bottom: 0;
-    //opacity:0.8;
 
     @include bp(small) {
       display: block;
+    }
+
+    @media #{bp(medium)}, (-webkit-min-device-pixel-ratio: 2) and #{bp(small)}, (min-resolution: 192dpi) and #{bp(small)} {
+      background-image: url('../assets/images/home_hero/hero_bg_medium.png');
+    }
+
+    @media #{bp(xlarge)}, (-webkit-min-device-pixel-ratio: 2) and #{bp(medium)}, (min-resolution: 192dpi) and #{bp(medium)} {
+      background-image: url('../assets/images/home_hero/hero_bg_xlarge.png');
     }
   }
 
@@ -173,7 +187,8 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    box-shadow: inset 0 0 10rem 8rem $color-dark-grey;
+    box-shadow: inset 0 0 10rem 8rem $color-dark-violet;
+    background: rgba(4, 167, 247, 0.07);
     z-index: 3;
   }
 }
@@ -184,10 +199,11 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  box-shadow: inset 0 10.3125rem 7.5625rem -3.625rem $color-dark-grey;
+  box-shadow: inset 0 10.3125rem 7.5625rem -3.625rem #130d1c;
   z-index: 5;
 
   /* Bottom shadow */
+
   &:after {
 
     content: '';
@@ -195,10 +211,9 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    box-shadow: inset 0 -8.875rem 5.8125rem -2.8125rem $color-dark-grey;
+    box-shadow: inset 0 -8.875rem 5.8125rem -2.8125rem $color-dark-violet;
     z-index: 6;
   }
-
 
   /* Pattern */
   /*

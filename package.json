@@ -1,7 +1,7 @@
 {
   "name": "soldat-page",
   "version": "0.0.1",
-  "author": "kentee",
+  "author": "Soldat Team",
   "description": "soldat-page",
   "scripts": {
     "build": "gulp build",
@@ -92,8 +92,8 @@
     "webpack-stream": "^4.0.2"
   },
   "dependencies": {
-    "jquery": "^3.3.1",
-    "svgxuse": "^1.2.6"
+    "svgxuse": "^1.2.6",
+    "wow.js": "^1.2.2"
   },
   "engines": {
     "node": "^8.10.0 || ^10.13.0"

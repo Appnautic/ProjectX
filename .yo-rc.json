@@ -2,7 +2,7 @@
   "generator-chisel": {
     "config": {
       "name": "Soldat Page",
-      "author": "kentee",
+      "author": "Soldat Team",
       "projectType": "fe",
       "nameSlug": "soldat-page",
       "nameCamel": "SoldatPage",
@@ -11,7 +11,8 @@
       "has_jquery_vendor_config": true
     },
     "pages": [
-      "Index"
+      "Index",
+      "Subpage"
     ]
   }
 }
