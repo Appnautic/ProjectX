@@ -45,7 +45,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "autoprefixer": "^8.1",
-    "babel-loader": "^8.0.0",
+    "babel-loader": "^8.3.0",
     "browser-sync": "^2.23.6",
     "chalk": "^2.3.2",
     "chunk-manifest-webpack-plugin": "^1.1.2",
@@ -88,8 +88,8 @@
     "stylelint": "^9.2.1",
     "through2": "^2.0.3",
     "vinyl-named": "^1.1.0",
-    "webpack": "^3.11.0",
-    "webpack-stream": "^4.0.2"
+    "webpack": "^5.75.0",
+    "webpack-stream": "^7.0.0"
   },
   "dependencies": {
     "svgxuse": "^1.2.6",
